@@ -1,7 +1,8 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Header */
@@ -27,6 +28,7 @@ header button.header-button{
 .menu.logo button{
     background-color: white;
     padding: 0.5rem;
+    padding-left: 0;
 }
 .search-box{
     padding-left: 2rem;
@@ -43,6 +45,8 @@ header button.header-button{
     height: 39px;
     outline: 1px solid #d3d3d3;
     border: none;
+    font-size: 18px; 
+    padding-left: 1rem;
 }
 .search-box button#mic{
     margin-left: 6px;
@@ -51,7 +55,7 @@ header button.header-button{
     background-color: #f9f9f9;
 }
 .search-box input::placeholder{
-    padding-left: 1rem;
+    
     font-size: 1rem;
     color: #888888;
 }
@@ -75,7 +79,58 @@ button.sign-in{
 button.sign-in svg{
      fill: #196bd7;
 }
-hr{
-    border: none;
-    outline: 1px solid #e5e5e5;
+
+/* End of header */
+/* Main  */
+
+
+main{
+    display: grid;
+    grid-template: 
+    'sidebar  topics '53px
+    'sidebar  videos '1fr/
+    250px 1fr;
+}
+main section.topics{
+    outline: 1px solid black;
+    grid-area: topics;
+    border-top: 2px solid #e5e5e5;
+}
+main section.videos{
+    grid-area: videos;
+    outline:1px solid black;
+}
+main section.sidebar{
+    grid-area: sidebar;
+    outline:1px solid black;
+}
+
+/* End of Main */
+/* Topics */
+
+main section.topics ul{
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    height: 100%;
+}
+main section.topics ul li a{
+    text-decoration: none;
+    color: black;
+    
+}
+main section.topics ul li{
+    border-radius: 50px;
+    background-color: #f2f2f2;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid #e0e0e0;
+}
+main section.topics ul li:first-child{
+    background-color: black;
+    
+    
+}
+main section.topics ul li:first-child a{
+    color: white;
 }
