@@ -73,7 +73,7 @@ button.sign-in{
     outline: 1px solid #196bd7;
 }
 button.sign-in svg{
-    fill: #196bd7;
+     fill: #196bd7;
 }
 hr{
     border: none;
