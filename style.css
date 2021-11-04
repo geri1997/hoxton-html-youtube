@@ -4,7 +4,28 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+body::-webkit-scrollbar{
+        width: 6px;
+        
+        
+    }
+    
+        
+    
+    body::-webkit-scrollbar-thumb{
+        background: #888; 
+        border-radius: 10px;
+        animation: scrollbar1 5s infinite;
+    }
+    @keyframes scrollbar1{
+        0%{background: blue;}
+        25%{background: red;}
+        100%{background: chartreuse;}
+    } 
 
+button{
+    cursor: pointer;
+}
 /* Header */
 header {
     width: 100%;
@@ -95,32 +116,40 @@ main{
     250px 1fr;
 }
 main section.topics{
-    outline: 1px solid black;
     grid-area: topics;
     overflow-x: scroll;
     border-top: 2px solid #e5e5e5;
     position: sticky;
     background-color: white;
     top: 61.4px;
+    border-bottom: 2px solid #e5e5e5;
 }
 main section.topics::-webkit-scrollbar{
-    height: 1px;
+    height: 3px;
 }
 main section.topics::-webkit-scrollbar-thumb{
     background: #888; 
+    border-radius: 10px;
+    display: none; 
+}
+main section.topics:hover::-webkit-scrollbar-thumb{
+    background: #888; 
+    border-radius: 10px;
+    display: block;
 }
 main section.videos{
     grid-area: videos;
-    outline:1px solid black;
-}
+    
+    background-color: #f9f9f9;
+    }
 main section.sidebar{
     padding-right: 0.3rem;
     grid-area: sidebar;
     /* outline:1px solid black; */
     overflow-y: scroll;
     height: 92vh;
-    /* top: 200.38px; */
-    /* position: sticky; */
+    position: fixed;
+    width: 250px;
 }
 
 main section.sidebar::-webkit-scrollbar{
@@ -194,7 +223,7 @@ section.sidebar ul li#selected{
 section.sidebar ul li#selected:hover{
     background-color: #b6b6b68f;
 }
-section.sidebar ul li:hover{
+section.sidebar ul li:hover:not(ul.about li){
     background-color: #e5e5e585;
 }
 .sidebar ul li a svg{
@@ -245,4 +274,68 @@ ul.best-of li:first-child, .more li:first-child{
 }
 ul.browse{
     padding: 0.4rem 0;
+}
+
+/* End of sidebar */
+/* Videos */
+section.normal{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(271.98px, 1fr));
+
+}
+.single-vid a img{
+    width: 100%;
+}
+
+
+.single-vid div.vid-info{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+.single-vid div.vid-info img{
+    border-radius: 50%;
+}
+.single-vid .vid-info div.ellipsis{
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    padding-bottom: 0.5rem;
+    gap: 1rem;
+    font-size: 14px;
+    font-weight: 700;
+    height: auto;
+}
+.single-vid .vid-info div.ellipsis svg{
+    height: 25px;
+    display: none;
+}
+
+
+.single-vid .vid-info div span:nth-child(2) + svg{
+    width: 15px;
+    display: inline;
+    padding-top: 0.2rem;
+    vertical-align: bottom;
+}
+.single-vid .vid-info div span:nth-child(2){
+    font-size: small;
+    color: #606060;
+    
+}
+.single-vid .vid-info div p{
+    font-size: small;
+    padding-top: 0.4rem;
+    color: #606060;
+}
+.single-vid a{
+    text-decoration: none;
+    color: black;
+}
+
+.single-vid{
+    padding: 1rem 0.5rem;
+}
+.single-vid:hover .vid-info div.ellipsis svg{
+    display: block;
 }
