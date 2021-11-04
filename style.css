@@ -8,6 +8,9 @@
 /* Header */
 header {
     width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0;
     padding: 0.7rem 1.5rem;
     display: grid;
     align-items: center;
@@ -94,7 +97,14 @@ main{
 main section.topics{
     outline: 1px solid black;
     grid-area: topics;
+    overflow-x: scroll;
     border-top: 2px solid #e5e5e5;
+    position: sticky;
+    background-color: white;
+    top: 61.4px;
+}
+main section.topics::-webkit-scrollbar{
+    height: 1px;
 }
 main section.videos{
     grid-area: videos;
@@ -114,10 +124,13 @@ main section.topics ul{
     grid-auto-flow: column;
     place-items: center;
     height: 100%;
+    gap: 1rem;
+    padding-left: 1rem    ;
 }
 main section.topics ul li a{
     text-decoration: none;
     color: black;
+    
     
 }
 main section.topics ul li{
@@ -125,6 +138,7 @@ main section.topics ul li{
     background-color: #f2f2f2;
     padding: 0.4rem 0.7rem;
     border: 1px solid #e0e0e0;
+    min-width: max-content;
 }
 main section.topics ul li:first-child{
     background-color: black;
