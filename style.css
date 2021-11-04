@@ -106,15 +106,38 @@ main section.topics{
 main section.topics::-webkit-scrollbar{
     height: 1px;
 }
+main section.topics::-webkit-scrollbar-thumb{
+    background: #888; 
+}
 main section.videos{
     grid-area: videos;
     outline:1px solid black;
 }
 main section.sidebar{
+    padding-right: 0.3rem;
     grid-area: sidebar;
-    outline:1px solid black;
+    /* outline:1px solid black; */
+    overflow-y: scroll;
+    height: 92vh;
+    /* top: 200.38px; */
+    /* position: sticky; */
 }
 
+main section.sidebar::-webkit-scrollbar{
+    width: 7px;
+}
+
+main section.sidebar::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+    display: none;
+  }
+
+  main section.sidebar:hover::-webkit-scrollbar-thumb{
+    background: #888; 
+    border-radius: 10px;
+    display: block;
+  }
 /* End of Main */
 /* Topics */
 
@@ -147,4 +170,79 @@ main section.topics ul li:first-child{
 }
 main section.topics ul li:first-child a{
     color: white;
+}
+
+/* End of Topics */
+/* Sidebar */
+.sidebar ul li a{
+    height: 45px;
+    gap: 0.5rem;
+    font-size: 14px;
+    font-weight: 500;
+    /* outline: 1px solid black; */
+    text-decoration: none;
+    color: black;
+    padding: 0.2rem;
+display: grid;
+grid-template-columns: 60px auto;
+justify-content: start;
+align-items: center;
+}
+section.sidebar ul li#selected{
+    background-color: #e5e5e5;
+}
+section.sidebar ul li#selected:hover{
+    background-color: #b6b6b68f;
+}
+section.sidebar ul li:hover{
+    background-color: #e5e5e585;
+}
+.sidebar ul li a svg{
+    padding: 0.3rem;
+}
+.sidebar p{
+    /* text-align: center; */
+    padding: 1rem 1.5rem;
+}
+.sidebar button{
+    
+    height: 39px;
+    border: none;
+    background-color: white;
+    padding: 0.3rem;
+    margin-left:  1.5rem;
+    margin-bottom: 1rem;
+    width: 100px;
+}
+.sidebar .about li a, .about li{
+    display: inline;
+    font-size: 0.75rem;
+    padding: 0.5rem 0;
+    color: #606060;
+}
+.sidebar .about{
+    
+    padding: 1rem;
+}
+.sidebar ul li a img{
+    padding: 0.3rem;
+    justify-self: center;
+    width: 33px;    
+    height: 33px;
+    border-radius: 50%;
+}
+
+ul.best-of li a{
+    padding: 0 0.2rem;
+    height: 40px;
+}
+ul.best-of li:first-child, .more li:first-child{
+    padding: 1rem 1.3rem;
+    color: #606060;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+ul.browse{
+    padding: 0.4rem 0;
 }
