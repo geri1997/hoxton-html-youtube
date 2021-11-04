@@ -7,9 +7,7 @@
 body::-webkit-scrollbar{
         width: 6px;
     }
-/* body{
-    min-width: 150px;
-} */
+
         
     
     body::-webkit-scrollbar-thumb{
@@ -280,6 +278,8 @@ ul.browse{
 /* Videos */
 section.normal{
     display: grid;
+    gap: 2rem;
+    padding: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(271.98px, 1fr));
 
 }
@@ -287,7 +287,18 @@ section.normal{
     width: 100%;
 }
 
+video{
+    display: none;
+}
 
+ .single-vid:hover video{
+    display: block;
+    width: 100%;
+  
+}
+.single-vid:hover a > img{
+    display: none;
+}
 .single-vid div.vid-info{
     display: grid;
     grid-template-columns: 30px 1fr;
@@ -333,9 +344,7 @@ section.normal{
     color: black;
 }
 
-.single-vid{
-    padding: 1rem 0.5rem;
-}
+
 .single-vid:hover .vid-info div.ellipsis svg{
     display: block;
 }
