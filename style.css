@@ -6,10 +6,10 @@
 }
 body::-webkit-scrollbar{
         width: 6px;
-        
-        
     }
-    
+/* body{
+    min-width: 150px;
+} */
         
     
     body::-webkit-scrollbar-thumb{
@@ -338,4 +338,73 @@ section.normal{
 }
 .single-vid:hover .vid-info div.ellipsis svg{
     display: block;
+}
+
+@media screen  and (max-width:1315px) {
+    section.sidebar ul li a{
+        display: grid;
+        grid-template-columns: 72px;
+            place-items: center;
+            height: 59px;
+           font-size: 11px;
+            margin-bottom: 1rem;
+    }
+    main{
+        display: grid;
+        grid-template: 
+        'sidebar  topics '53px
+        'sidebar  videos '1fr/
+        85px 1fr;
+    }
+    section.sidebar ul li#selected{
+        background-color: white;
+    }
+    main section.sidebar{
+
+        padding-right: 0rem;
+        /* outline:1px solid black; */
+
+        width: 85px;
+    }
+    section.sidebar *:not(ul:first-child, ul:first-child li,ul:first-child li a svg, ul:first-child li a,ul:first-child li a svg g, ul:first-child li a svg g path){
+        display: none;
+    }
+}
+
+@media screen  and (max-width:800px) {
+    header div{
+        display: none;
+        
+    }
+    header{
+        grid-template-columns: 150px 1fr 220px;
+    }
+    header .search-box{
+        padding: 0;
+        margin-left: 1rem;
+    }
+    .search-box input{
+        min-width: 100px;
+    }
+}
+@media screen  and (max-width:650px) {
+    .search-box input{
+        display: none;
+    }
+    .search-box button#mic{
+      background-color: white;
+      border-radius: 0;
+    }
+    .search-box button#mic svg{
+        height: 100%;
+        width: 100%;
+    }
+    .search-box{
+        grid-template-columns: 45px 45px;
+        justify-content: end;
+    }
+    #magnifying-glass{
+        background-color: white;
+        outline: none;
+    }
 }
