@@ -5,13 +5,14 @@
     font-family: 'Roboto', sans-serif;
 }
 body::-webkit-scrollbar{
-        width: 6px;
+        width: 16px;
     }
 
         
     
     body::-webkit-scrollbar-thumb{
-        background: #888; 
+        /* background: #888;  */
+        background:#196bd7;
         border-radius: 10px;
         animation: scrollbar1 5s infinite;
     }
@@ -292,7 +293,7 @@ video{
 }
 
  .single-vid:hover video{
-    display: block;
+    display: inline;
     width: 100%;
   
 }
